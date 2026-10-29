@@ -1,0 +1,26 @@
+
+def binary8(n):
+    return format(n & 0xFF, '08b')
+
+
+def add(a, b):
+    result = a + b
+    binary_result = result & 0xFF
+
+    print("Operand 1:", binary8(a))
+    print("Operand 2:", binary8(b))
+    print("Binary Result:", binary8(binary_result))
+    print("Decimal Result:", result)
+
+    if result < -128 or result > 127:
+        print("Overflow: Yes")
+    else:
+        print("Overflow: No")
+
+
+print("a) 34 + (+27)")
+add(34, 27)
+
+print("\nb) (-34) - (-27)")
+add(-34, 27)
+
