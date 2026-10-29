@@ -1,0 +1,12 @@
+
+n = 0b10110110
+
+print("Original:", format(n, '08b'))
+
+for i in range(2):
+    msb = (n >> 7) & 1
+    n = ((n << 1) & 0xFF) | msb
+    print("Step", i + 1, ":", format(n, '08b'))
+
+print("Final Result:", format(n, '08b'))
+
